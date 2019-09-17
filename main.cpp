@@ -5,10 +5,26 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    //Tester::execute();
-    /*
-    SelfList<int> Movelist(SelfList<int>::Move);
-    SelfList<int> Movelist(SelfList<int>::Count);
+    TraitsList<Integer> integers;
+    for(int i=0;i<5;i++){
+        integers.insert(4 * i + 3);
+        cout<<endl<<endl;
+    }
+    integers.insert(3);
+    integers.insert(2);
+    integers.insert(5);
+    integers.insert(1);
+    integers.print();
+    integers.remove(1);
+    integers.print();
+    integers.remove(11);
+    integers.remove(7);
+    integers.print();
+    cout<<integers.find(2);
+    Tester::execute();
+    
+    //SelfList<int> Movelist(SelfList<int>::Move);
+    //SelfList<int> Movelist(SelfList<int>::Count);
     SelfList<int> Movelist(SelfList<int>::Transpose);
     Movelist.insert(5);
     Movelist.remove(3);
@@ -58,6 +74,10 @@ int main(int argc, char const *argv[]) {
     Movelist.print();
     Movelist.remove(5);
     Movelist.print();
-*/
+    Movelist.remove(2);
+    Movelist.remove(1);
+    Movelist.remove(4);
+    Movelist.remove(5);
+
     return EXIT_SUCCESS;
 }    

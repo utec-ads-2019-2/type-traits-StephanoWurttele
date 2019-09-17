@@ -16,7 +16,7 @@ using namespace std;
     do { \
         if (! (condition)) { \
             std::cerr << "Assertion `" #condition "` failed in " << __FILE__ \
-                      << " line " << __LINE__ << ": " << message << std::endl; \
+                    << " line " << __LINE__ << ": " << message << std::endl; \
             std::terminate(); \
         } \
     } while (false)
@@ -24,7 +24,7 @@ using namespace std;
 #   define ASSERT(condition, message) do { } while (false)
 #endif
 
-#define NUMBER_OF_TESTS 1000
+#define NUMBER_OF_TESTS 10
 
 template <typename T>
 struct Greater {
@@ -41,14 +41,20 @@ struct Less {
 };
 
 struct Integer {
-       typedef int T;
-       typedef Less<T> Operation;
+    typedef int T;
+    typedef Less<T> Operation;
 };
 
 struct Float {
-       typedef float T;
-       typedef Greater<T> Operation;
+    typedef float T;
+    typedef Greater<T> Operation;
 };
+
+struct Double {
+    typedef double T;
+    typedef Less<T> Operation;
+};
+
 
 class Tester {
     private:        

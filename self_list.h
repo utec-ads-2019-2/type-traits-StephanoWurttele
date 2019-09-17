@@ -17,13 +17,12 @@ class SelfList {
         Method method;
 
     public:
-        SelfList(Method method) : head(nullptr) {this->method=method;};
+        SelfList(Method method) : head(nullptr), tail(nullptr) {this->method=method;};
 
         void insert(T data) {
             Node<T>* temp=new Node<T>(data);
             temp->data=data;
             if(sizes==0){
-                temp->prev==nullptr;
                 this->head=temp;
                 this->tail=this->head;
             }
@@ -53,6 +52,10 @@ class SelfList {
                 }
                 if(temp->next!=nullptr)
                     temp=temp->next;
+            }
+            if(sizes==0){
+                this->head=nullptr;
+                this->tail=nullptr;
             }
             return false;
         }  
@@ -135,7 +138,6 @@ class SelfList {
                             }
                             else
                                 this->head=temp;
-                            
                         }
                         else{
                             temp2->prev->next=temp;
@@ -178,7 +180,8 @@ class SelfList {
         }
 
         ~SelfList() {
-            this->head->killSelf();
+            if(sizes!=0)
+                this->head->killSelf();
         }
         
 };
