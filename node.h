@@ -10,6 +10,7 @@ struct Node {
     
     Node(T data) : data(data) {
         next = nullptr;
+        prev = nullptr;
     }
     
     void killSelf();
