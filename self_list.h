@@ -64,6 +64,8 @@ class SelfList {
             auto temp=head;
             Node<T>* temp2=nullptr;
             for (int i=0;i<sizes;i++){
+                // Podrían ser métodos privados separados
+                // Más aún, podrías sacar el bucle a una función externa
                 if(temp->data==data){
                     if(method==Move){
                         if (i==0)

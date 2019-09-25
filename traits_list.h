@@ -15,6 +15,7 @@ class TraitsList {
 
         bool find(T data, Node<T> **&pointer) {
             while(*pointer){
+                // Esto podría ser parte del condicional del bucle
                 if(cmp((*pointer)->data,data)){
                     if(data==(*pointer)->data){
                         return true;
@@ -46,12 +47,14 @@ class TraitsList {
                     *temp2=temp1;
                 //}
             }
+            // Y el return?
         };
         bool remove(T data) {
             Node<T>** temp2=&head;
             if(find(data,temp2)){
                 sizes--;
                 *temp2=(*temp2)->next;
+                // No estás liberando la data, no hay delete
             }
             
         }  

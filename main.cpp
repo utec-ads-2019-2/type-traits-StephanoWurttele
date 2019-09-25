@@ -23,9 +23,10 @@ int main(int argc, char const *argv[]) {
     cout<<integers.find(2);
     Tester::execute();
     
+    // Da segmentation fault con Move
     //SelfList<int> Movelist(SelfList<int>::Move);
-    //SelfList<int> Movelist(SelfList<int>::Count);
-    SelfList<int> Movelist(SelfList<int>::Transpose);
+    SelfList<int> Movelist(SelfList<int>::Count);
+    //SelfList<int> Movelist(SelfList<int>::Transpose);
     Movelist.insert(5);
     Movelist.remove(3);
     Movelist.remove(5);
